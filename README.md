@@ -1,0 +1,1 @@
+# Spring-JPA-Amazon-RedShift-Sample-
