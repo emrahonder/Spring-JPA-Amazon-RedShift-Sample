@@ -11,7 +11,7 @@ import javax.persistence.*;
 public class City {
 
     @Id
-    public int cityid;
-    public String city;
+    public int id;
+    public String name;
 
 }

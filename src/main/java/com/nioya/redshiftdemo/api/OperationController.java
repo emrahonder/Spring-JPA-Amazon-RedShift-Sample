@@ -15,28 +15,19 @@ public class OperationController {
 
     @PostMapping("/save")
     @ResponseBody
-    public void saveCity(@RequestParam() String notebook)
+    public void saveCity(@RequestParam() String cityName)
     {
         City city = new City();
-        Random rand = new Random();
-        city.setCity(notebook);
-        city.setCityid(rand.nextInt());
+        city.setId(new Random().nextInt(100));
+        city.setName(cityName);
         cityRepository.save(city);
-        city.setCityid(rand.nextInt());
-        cityRepository.save(city);
+
     }
 
-    @GetMapping("/save")
+    @GetMapping("/get")
     @ResponseBody
-    public List<City> getCities(@RequestParam() String notebook)
+    public List<City> getCities()
     {
-        City city = new City();
-        Random rand = new Random();
-        city.setCity(notebook);
-        city.setCityid(rand.nextInt());
-        cityRepository.save(city);
-        city.setCityid(rand.nextInt());
-        cityRepository.save(city);
         return cityRepository.findAll();
     }
 }
